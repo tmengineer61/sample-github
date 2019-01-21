@@ -1,0 +1,13 @@
+{
+  "short_name": "PracticePwa",
+  "name": "PracticePwa",
+  "icons": [
+    {
+      "src": "/sample-github/images/pwa_icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/sample-github/",
+  "display":"standalone"
+}
