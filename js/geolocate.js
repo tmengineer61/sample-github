@@ -36,7 +36,7 @@ $(function() {
     {
         // 現在位置を取得できる場合の処理
         // 現在地を取得
-        navigator.geolocation.getCurrentPosition(SuccessFunc(position), errorFunc(error), optionObj);
+        navigator.geolocation.getCurrentPosition(successFunc(position), errorFunc(error), optionObj);
     }
 
     // Geolocation APIに対応していない
