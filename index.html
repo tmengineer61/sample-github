@@ -6,8 +6,28 @@
         <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
         <meta name="viewport" content="width=device-width">
+        <link rel="manifest" href="/manifest.json">
     </head>
     <body>
+    <script>
+       window.addEventListener('load', function() {
+           var strSwPath = '/serviceworker.js';
+          // この記述を追記
+          if ('serviceWorker' in navigator) {
+            // /からの絶対パスで指定。serviceworker.jsを置いているディレクトリの階層
+            // 以下のディレクトリのみserviceworker.jsで操作することができる。
+            navigator.serviceWorker
+            .register(strSwPath).then(function(registration) {
+                // ブラウザのServiceWorkersがserviceworker.jsを読み込んだら、installイベント発火する
+                // registration=serviceworkerが登録された状態のオブジェクト
+                if ( typeof registration.update === 'function') {
+                    // キャッシュにアクセスせずserviceworkerの更新する
+                    registration.update();
+                }
+            });
+          }
+        });
+    </script>
         <h1>練習</h1>
     </body>
 </html>
